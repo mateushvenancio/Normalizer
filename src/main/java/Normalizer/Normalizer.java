@@ -31,20 +31,19 @@ public class Normalizer {
     public Normalizer() { }
 
     public String normalize(String value) {
-        String priceze = "";
+        String bestCandidate = "";
         double score = 0;
 
         ScoreCalculateStrategy calculator = scoreCalculateFactory.createStrategy(method);
 
         for (String item : titles) {
             final double calculatedScore = calculator.calculateScore(value, item);
-            System.out.println("Score " + calculatedScore);
             if (calculatedScore > score) {
                 score = calculatedScore;
-                priceze = item;
+                bestCandidate = item;
             }
         }
 
-        return priceze;
+        return bestCandidate;
     }
 }

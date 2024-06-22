@@ -18,10 +18,10 @@ public class JaccardStrategy extends ScoreCalculateStrategy {
         return (double) intersection.size() / union.size();
     }
 
-    private static Set<String> generateNGrams(String str, int n) {
+    private static Set<String> generateNGrams(String string, int n) {
         Set<String> ngrams = new HashSet<>();
-        for (int i = 0; i <= str.length() - n; i++) {
-            ngrams.add(str.substring(i, i + n));
+        for (int i = 0; i <= string.length() - n; i++) {
+            ngrams.add(string.substring(i, i + n));
         }
         return ngrams;
     }

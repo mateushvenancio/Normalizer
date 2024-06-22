@@ -5,14 +5,14 @@ import Normalizer.strategy.LavenshteinStrategy;
 import Normalizer.strategy.ScoreCalculateStrategy;
 
 public class ScoreCalculateFactory {
-    public ScoreCalculateStrategy createStrategy(String type) {
-        if (type == null) return null;
+    public ScoreCalculateStrategy createStrategy(String method) {
+        if (method == null) return null;
 
-        if (type.equalsIgnoreCase("JACCARD")) {
+        if (method.equalsIgnoreCase("JACCARD")) {
             return new JaccardStrategy();
         }
 
-        if (type.equalsIgnoreCase("LAVENSHTEIN")) {
+        if (method.equalsIgnoreCase("LAVENSHTEIN")) {
             return new LavenshteinStrategy();
         }
 
